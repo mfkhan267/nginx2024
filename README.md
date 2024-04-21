@@ -143,6 +143,12 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 ## Basic Proxy Routing with the Default NGINX Configuration File
 
+## We shall be using a Portfolio Template for this LAB.
+
+	git clone https://github.com/mfkhan267/nginx2024.git
+	
+	sudo cp -r nginx2024/portfoliotemplate/ /portfoliotemplate/ -f
+
 ## Backup the Default NGINX Configuration File
 
 	sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
