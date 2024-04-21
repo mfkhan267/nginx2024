@@ -147,7 +147,7 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 	git clone https://github.com/mfkhan267/nginx2024.git
 	
-	sudo cp -r nginx2024/portfoliotemplate/ /portfoliotemplate/ -f
+	sudo mv nginx2024/portfoliotemplate/ /portfoliotemplate/ -f
 
 ## Backup the Default NGINX Configuration File
 
