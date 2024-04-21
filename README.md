@@ -102,12 +102,6 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/4f2461be-5c9e-46a1-b4ee-8e88a9c10bbe)
 
-https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/apache-tomcat/
-
-https://www.digitalocean.com/community/tutorials/install-tomcat-on-linux
-
-https://www.atlantic.net/vps-hosting/how-to-setup-tomcat-with-nginx-as-a-reverse-proxy-on-ubuntu/
-
 ## You may also create s systemd service for Tomcat
 
 	sudo vi /etc/systemd/system/tomcat.service
@@ -211,3 +205,11 @@ https://www.atlantic.net/vps-hosting/how-to-setup-tomcat-with-nginx-as-a-reverse
 Your Portfolio website should now be rendered on the http://localhost:80 OR http://localhost
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/d73b90d2-fd25-4889-9329-b9425a6fb1aa)
+
+## References
+
+https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/apache-tomcat/
+
+https://www.digitalocean.com/community/tutorials/install-tomcat-on-linux
+
+https://www.atlantic.net/vps-hosting/how-to-setup-tomcat-with-nginx-as-a-reverse-proxy-on-ubuntu/
