@@ -4,7 +4,7 @@ VM1 - Running NGINX (Reverse Proxy) + Tomcat Server
 
 ## Create a new RG
 
-az group create --name nginxrg267 --location eastus2
+	az group create --name nginxrg267 --location eastus2
 
 ## Create a new Azure VM
 
