@@ -1,14 +1,14 @@
 # How to use NGINX as a Reverse Proxy?
 
-This is going to quick start article to Configuring NGINX as a reverse proxy server for HTTP and other protocols. You will learn how to pass a request from NGINX to proxied servers over different protocols and TCP ports, modify client request headers that are sent to the proxied server.
+This is going to be a quick-start article to Configuring NGINX as a reverse proxy server for HTTP and other protocols. You will learn how to pass a request from NGINX to proxied servers over different protocols and TCP ports, modify client request headers that are sent to the proxied server.
 
 ## What is NGINX?
 
-As per WIKIPEDIA, Nginx (pronounced "engine x", stylized as NGINX or nginx) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
+As per WIKIPEDIA, NGINX (pronounced "engine x", stylized as NGINX or nginx) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
 
 ## What is Apache Tomcat?
 
-WIKIPEDIA defines Apache Tomcat (called "Tomcat" for short) as a free and open-source implementation of the Jakarta Servlet, Jakarta Expression Language, and WebSocket technologies. It provides a "pure Java" HTTP web server environment in which Java code can also run. Thus it is a Java web application server, although not a full JEE application server.
+WIKIPEDIA also defines Apache Tomcat (called "Tomcat" for short) as a free and open-source implementation of the Jakarta Servlet, Jakarta Expression Language, and WebSocket technologies. It provides a "pure Java" HTTP web server environment in which Java code can also run. Thus it is a Java web application server, although not a full JEE application server.
 
 ## LAB
 
