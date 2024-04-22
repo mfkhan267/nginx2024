@@ -222,7 +222,7 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 Your Portfolio website should now be rendered on the http://localhost:80 OR http://localhost
 
-![image](https://github.com/mfkhan267/nginx2024/assets/77663612/d73b90d2-fd25-4889-9329-b9425a6fb1aa)
+![image](https://github.com/mfkhan267/nginx2024/assets/77663612/551c8c42-8fc5-4203-b496-6e76c935ac19)
 
 **References**
 
