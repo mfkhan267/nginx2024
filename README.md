@@ -1,4 +1,9 @@
+# How to use NGINX as a Reverse Proxy?
+
+This is going to quick start article to Configuring NGINX as a reverse proxy server for HTTP and other protocols. You will learn how to pass a request from NGINX to proxied servers over different protocols and TCP ports, modify client request headers that are sent to the proxied server.
+
 ## What is NGINX?
+
 As per WIKIPEDIA, Nginx (pronounced "engine x", stylized as NGINX or nginx) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. 
 
 ## What is Apache Tomcat?
@@ -9,11 +14,11 @@ WIKIPEDIA defines Apache Tomcat (called "Tomcat" for short) as a free and open-s
 
 VM1 - Running NGINX (Reverse Proxy) + Tomcat Server
 
-## Create a new RG
+**Create a new RG**
 
 	az group create --name nginxrg267 --location eastus2
 
-## Create a new Azure VM
+**Create a new Azure VM**
 
 	az vm create \
 	--resource-group nginxrg267 \
@@ -23,23 +28,23 @@ VM1 - Running NGINX (Reverse Proxy) + Tomcat Server
 	--ssh-key-value ~/.ssh/id_rsa.pub \
 	--public-ip-sku Standard \
 
-## Open Firewall port 8080 for TOMCAT
+**Open Firewall port 8080 for TOMCAT**
 
 	az vm open-port \
 	--resource-group nginxrg267 \
 	--name nginxvm267  \
 	--port 8080 --priority 1010
 
-## Open Firewall port 80 for NGINX
+**Open Firewall port 80 for NGINX**
 
 	az vm open-port \
 	--resource-group nginxrg267 \
 	--name nginxvm267  \
 	--port 80 --priority 1011
 
-## Login to the Azure VM
+**Install NGINX, JAVA and TOMCAT**
 
-## Install NGINX, JAVA and TOMCAT
+**Login to the Azure VM**
 
 	sudo apt-get update -y && sudo apt-get install nginx fontconfig openjdk-17-jre -y
 	sudo systemctl start nginx && sudo systemctl enable nginx
@@ -65,14 +70,14 @@ You may configure a DNS Name for the Azure VM as shown below
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/d92eda4a-ee26-4177-80aa-44b753a6f427)
 
-## Application Level Routing with the Custom Configuration File
+# Application Level Routing with the Custom Configuration File
 
-## Create a NGINX Conf File for TOMCAT
+**Create a NGINX Conf File for TOMCAT**
 
 	sudo vi /etc/nginx/sites-available/tomcat.conf
 
 
-## Copy paste below snippet to the tomcat.conf as above and save / close the file
+**Copy paste below snippet to the tomcat.conf as above and save / close the file**
 
 	server {
 	  listen 8000;
@@ -89,17 +94,17 @@ You may configure a DNS Name for the Azure VM as shown below
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/72449ddd-1e0f-49cf-b10d-0d096ca75e07)
 
-## Validate the NGINX Configuration
+Validate the NGINX Configuration
 
 	sudo nginx -t
 
-## Enable the NGINX host configuration file for TOMCAT and restart the NGINX web server to apply the changes
+**Enable the NGINX host configuration file for TOMCAT and restart the NGINX web server to apply the changes**
 
 	sudo ln -s /etc/nginx/sites-available/tomcat.conf /etc/nginx/sites-enabled/
 	
-	sudo systemctl reload nginx OR nginx -s reload
+	sudo systemctl reload nginx **OR** sudo nginx -s reload
 
-## If all OK, Restart the NGINX Service
+**If all OK, Restart the NGINX Service**
 
 	sudo systemctl restart nginx
 
@@ -109,13 +114,13 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/4f2461be-5c9e-46a1-b4ee-8e88a9c10bbe)
 
-## You may also create s systemd service for Tomcat
+**You may also create a systemd service for Tomcat**
 
 	sudo vi /etc/systemd/system/tomcat.service
 
-## Copy and Paste the below Tomcat Systemd Service Script
+**Copy and Paste the below Tomcat Systemd Service Script**
 
-# Start of Script
+**Start of Script**
 
 	[Unit]
 	Description=Apache Tomcat Web Application Container
@@ -137,18 +142,18 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 	[Install]
 	WantedBy=multi-user.target
 
-# End of Script
+**End of Script**
 
-## Reload Daemon
+**Reload Daemon**
 
 	sudo systemctl daemon-reload
 
-## Start and Enable the Tomcat Service
+**Start and Enable the Tomcat Service**
 
 	sudo systemctl start tomcat
 	sudo systemctl enable tomcat
 
-## Basic Proxy Routing with the Default NGINX Configuration File
+# Basic Proxy Routing with the Default NGINX Configuration File
 
 ## We shall be using a Portfolio Template for this LAB.
 
@@ -156,15 +161,15 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 	
 	sudo mv nginx2024/portfoliotemplate/ /portfoliotemplate/ -f
 
-## Backup the Default NGINX Configuration File
+**Backup the Default NGINX Configuration File**
 
 	sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 
-## EDIT the NGINX CONF File
+**EDIT the NGINX CONF File**
 
 	sudo vi /etc/nginx/nginx.conf
 
-## COPY PASTE the below configuration code into the NGINX Conf File and Save / Close
+**COPY PASTE the below configuration code into the NGINX Conf File and Save / Close**
 
 	user www-data;
 	worker_processes auto;
@@ -207,11 +212,11 @@ Now, you can access your Tomcat default webpage using the URL http://domain_name
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/a4a5c03e-77f5-4c33-a27f-fa9a0ae08dbb)
 
-## Validate the NGINX Configuration
+**Validate the NGINX Configuration**
 
 	sudo nginx -t
 
-## Reload the NGINX Configuration File
+**Reload the NGINX Configuration File**
 
 	nginx -s reload
 
@@ -219,7 +224,7 @@ Your Portfolio website should now be rendered on the http://localhost:80 OR http
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/d73b90d2-fd25-4889-9329-b9425a6fb1aa)
 
-## References
+**References**
 
 https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/apache-tomcat/
 
