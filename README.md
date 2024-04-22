@@ -94,6 +94,8 @@ You may configure a DNS Name for the Azure VM as shown below
 
 ![image](https://github.com/mfkhan267/nginx2024/assets/77663612/72449ddd-1e0f-49cf-b10d-0d096ca75e07)
 
+![image](https://github.com/mfkhan267/nginx2024/assets/77663612/78158eb3-4042-4d33-ba18-876968d852be)
+
 Validate the NGINX Configuration
 
 	sudo nginx -t
