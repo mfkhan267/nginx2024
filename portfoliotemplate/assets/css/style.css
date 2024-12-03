@@ -341,41 +341,31 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
         5.  Education
 --------------------------------------*/
 
+/* Education Section */
 .education {
-    background:  #f9fbfd;
-    padding-top:  50px;
-}
-.education-horizontal-timeline {
-    padding: 80px 0;
+    padding: 50px 0 20px; /* Reduced bottom padding from 100px to 20px */
+    border-top: 1px solid #e5ebf2;
 }
 
-/*.education-horizontal-timeline*/
-.education-horizontal-timeline .col-sm-4 {padding:0 2px;}
+.education-content {
+    padding-top: 50px; /* Reduced top padding */
+}
 
-.single-horizontal-timeline .experience-time h3{text-transform: capitalize;}
-.single-horizontal-timeline .experience-time h3 span{text-transform:lowercase;}
-.single-horizontal-timeline .timeline-content h5 {margin: 15px 0;}
-.single-horizontal-timeline p {color: #999fb3;max-width: 335px;}
+/* Single Timeline Box */
+.single-timeline-box {
+    margin-bottom: 30px; /* Reduced bottom margin */
+}
 
-/*.timeline-horizontal-border*/
-.timeline-horizontal-border {
-    display:  flex;
-    align-items: center;
-    padding: 26px 0 30px;
+/* Timeline Vertical Line */
+.main-timeline:before {
+    height: 100%; /* Adjusted height to match the content dynamically */
+    top: 0; /* Set to align correctly */
 }
-.timeline-horizontal-border i {
-    font-size:  10px;
-    color: #d92cf9;
-    margin-right:  5px;
+
+/* Hide Responsive Padding for Education Time */
+.education-time-responsive {
+    display: none; /* Ensures no unexpected space from responsive design */
 }
-span.single-timeline-horizontal {
-    display:  inline-block;
-    background: #b2c1ce;
-    height:  1px;
-    width: 380px;
-}
-span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
-/*.timeline-horizontal-border*/
 
 /*.education-horizontal-timeline*/
 
