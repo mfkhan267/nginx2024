@@ -271,19 +271,32 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 /*.single-about-txt*/
 
 /*.single-about-img */
-.single-about-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
+.single-about-img {
+    position: relative;
+    box-shadow: 0 5px 20px rgba(14, 25, 80, 0.30);
+    width: 100%; /* Make it flexible for the container */
+    height: 468px; /* Ensure the height is consistent */
+    overflow: hidden; /* Ensures no overflow from the image */
+}
+
 .single-about-img:before {
-    position:  absolute;
+    position: absolute;
     content: " ";
     top: 0;
-    left:  0;
+    left: 0;
     width: 109%;
-    height:  100%;
-    background: rgba(31,44,108,.3);
+    height: 100%;
+    background: rgba(31, 44, 108, 0.3);
+    z-index: 1;
 }
+
 .single-about-img img {
-    max-width: 500px;
-    height: 468px;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensures image fills without stretching */
+    display: block; /* Removes inline gap from images */
+    position: relative;
+    z-index: 0; /* Keeps image below the overlay */
 }
 .about-list-icon{
     display: flex;
